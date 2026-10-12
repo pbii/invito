@@ -21,16 +21,16 @@ export default function VerifyEmail({ status }: { status?: string }) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                 </div>
-                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Verifikasi Email Anda
                 </h1>
-                <p className="mt-2 text-xs text-gray-500 leading-relaxed">
+                <p className="mt-2 text-xs text-gray-500 dark:text-neutral-400 leading-relaxed">
                     Terima kasih telah mendaftar! Sebelum memulai, silakan verifikasi alamat email Anda melalui tautan yang baru saja kami kirimkan.
                 </p>
             </div>
 
             {status === 'verification-link-sent' && (
-                <div className="mb-4 rounded-xl bg-emerald-50 p-3 text-xs font-medium text-emerald-700 border border-emerald-200 text-center">
+                <div className="mb-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 p-3 text-xs font-medium text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40 text-center">
                     Tautan verifikasi baru telah dikirim ke alamat email yang Anda daftarkan.
                 </div>
             )}
@@ -49,7 +49,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
                         href={route('logout')}
                         method="post"
                         as="button"
-                        className="text-xs font-medium text-gray-400 hover:text-gray-600 underline"
+                        className="text-xs font-medium text-gray-400 dark:text-neutral-500 hover:text-gray-600 dark:hover:text-neutral-300 underline"
                     >
                         Keluar dari Akun
                     </Link>

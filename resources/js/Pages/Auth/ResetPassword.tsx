@@ -32,17 +32,17 @@ export default function ResetPassword({
             <Head title="Reset Kata Sandi" />
 
             <div className="mb-6 text-center">
-                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Perbarui Kata Sandi
                 </h1>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">
                     Masukkan kata sandi baru untuk akun pernikahan Anda
                 </p>
             </div>
 
             <form onSubmit={submit} className="space-y-4">
                 <div>
-                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700" />
+                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
 
                     <TextInput
                         id="email"

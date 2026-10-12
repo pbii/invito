@@ -1,21 +1,23 @@
 import { usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, useState } from 'react';
 
 export default function ApplicationLogo(props: HTMLAttributes<HTMLDivElement>) {
     const { branding } = usePage<PageProps>().props;
     const appName = branding?.app_name || 'WedInvite';
     const appTagline = branding?.app_tagline || 'Platform Undangan Digital';
     const appLogoUrl = branding?.app_logo_url;
+    const [logoFailed, setLogoFailed] = useState(false);
 
     return (
         <div {...props} className={`flex items-center gap-2.5 ${props.className || ''}`}>
-            {appLogoUrl ? (
+            {appLogoUrl && !logoFailed ? (
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl overflow-hidden bg-white/10 p-1 shadow-md border border-gray-200/20">
                     <img
                         src={appLogoUrl}
                         alt={appName}
                         className="h-full w-full object-contain"
+                        onError={() => setLogoFailed(true)}
                     />
                 </div>
             ) : (

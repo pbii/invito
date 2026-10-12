@@ -1,5 +1,6 @@
 import Dropdown from "@/Components/Dropdown";
 import { Link, usePage } from "@inertiajs/react";
+import { PageProps } from "@/types";
 import React, { PropsWithChildren, ReactNode, useState } from "react";
 
 interface AdminLayoutProps {
@@ -12,8 +13,10 @@ export default function AdminLayout({
     title,
     children,
 }: PropsWithChildren<AdminLayoutProps>) {
-    const user = usePage().props.auth.user;
+    const { auth, branding } = usePage<PageProps>().props;
+    const user = auth.user;
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [logoFailed, setLogoFailed] = useState(false);
 
     const navigationGroups = [
         {
@@ -299,12 +302,13 @@ export default function AdminLayout({
                             href={route("admin.dashboard")}
                             className="flex items-center gap-2.5 group"
                         >
-                            {usePage().props.branding?.app_logo_url ? (
+                            {branding?.app_logo_url && !logoFailed ? (
                                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 p-1 shadow-lg border border-white/20 transition group-hover:scale-105 overflow-hidden">
                                     <img
-                                        src={usePage().props.branding?.app_logo_url}
-                                        alt={usePage().props.branding?.app_name || "WedInvite"}
+                                        src={branding?.app_logo_url}
+                                        alt={branding?.app_name || "WedInvite"}
                                         className="h-full w-full object-contain"
+                                        onError={() => setLogoFailed(true)}
                                     />
                                 </div>
                             ) : (
@@ -327,7 +331,7 @@ export default function AdminLayout({
                             <div className="flex flex-col">
                                 <div className="flex items-center gap-1.5">
                                     <span className="font-sans text-sm font-bold tracking-tight text-white leading-none">
-                                        {usePage().props.branding?.app_name ||
+                                        {branding?.app_name ||
                                             "WedInvite"}
                                     </span>
                                     <span className="text-[9px] px-1.5 py-0.2 rounded-full font-mono font-semibold bg-admin-primary/10 text-admin-primary border border-admin-primary/20">

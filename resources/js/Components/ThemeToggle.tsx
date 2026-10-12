@@ -59,6 +59,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
             title={isDark ? 'Beralih ke mode terang' : 'Beralih ke mode gelap'}
             className={`group relative inline-flex h-9 w-9 items-center justify-center rounded-xl border border-gray-200/80 bg-white/90 text-gray-600 shadow-xs backdrop-blur-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-admin-primary/50 dark:border-neutral-800 dark:bg-neutral-900/90 dark:text-neutral-300 dark:hover:border-neutral-700 dark:hover:bg-neutral-800 dark:hover:text-white ${className}`}
         >
+            <span key={isDark ? 'dark' : 'light'} className="theme-icon-enter inline-flex">
             {isDark ? (
                 // Sun Icon (when currently dark, click to switch to light)
                 <svg
@@ -90,6 +91,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
                     />
                 </svg>
             )}
+            </span>
         </button>
     );
 }

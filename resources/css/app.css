@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    color-scheme: light;
+}
+
+:root.dark {
+    color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    *,
+    ::before,
+    ::after {
+        transition-property: background-color, border-color, color, fill, stroke;
+        transition-duration: 150ms;
+        transition-timing-function: ease-out;
+    }
+}
+
+@keyframes theme-icon-in {
+    from {
+        transform: rotate(-90deg) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.theme-icon-enter {
+    animation: theme-icon-in 200ms ease-out;
+    transform-origin: center;
+}
