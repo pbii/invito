@@ -1,0 +1,99 @@
+/* Eloise Editorial Custom Animations & Section-by-Section Choreography */
+
+@keyframes floatGentle {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.55;
+        transform: scale(1.05);
+    }
+}
+
+.animate-float-gentle {
+    animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* ======================================================== */
+/* SECTION-BY-SECTION ISOLATED REVEAL SYSTEM                */
+/* ======================================================== */
+
+.editorial-section {
+    position: relative;
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.editorial-section.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered elements inside a revealed section */
+.editorial-section .flow-item-1,
+.editorial-section .flow-item-2,
+.editorial-section .flow-item-3,
+.editorial-section .flow-item-4 {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.editorial-section.is-revealed .flow-item-1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 150ms;
+}
+
+.editorial-section.is-revealed .flow-item-2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 450ms;
+}
+
+.editorial-section.is-revealed .flow-item-3 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 750ms;
+}
+
+.editorial-section.is-revealed .flow-item-4 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1050ms;
+}
+
+/* Clear section chapter separators */
+.editorial-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    color: rgba(53, 58, 32, 0.2);
+}
+
+.editorial-divider::before,
+.editorial-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+}

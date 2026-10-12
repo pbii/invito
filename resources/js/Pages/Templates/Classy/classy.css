@@ -1,0 +1,44 @@
+/* Katsudoto Ningrum Classy Stylesheet Entry */
+@import './katsudoto-template/assets/css/selectize.default.css';
+@import './katsudoto-template/assets/css/flexbin.css';
+@import './katsudoto-template/assets/css/aos.css';
+@import './katsudoto-template/assets/css/lightgallery.css';
+@import './katsudoto-template/assets/css/all.min.css';
+@import './katsudoto-template/assets/css/slick.css';
+@import './katsudoto-template/assets/css/modal-video.min.css';
+@import './katsudoto-template/assets/css/389180d9.css';
+@import './katsudoto-template/assets/css/49ff9aca.css';
+@import './katsudoto-template/assets/css/7436fe60.css';
+@import './katsudoto-template/assets/css/96cdc8bb.css';
+@import './katsudoto-template/assets/css/6e8e0db0.css';
+@import './katsudoto-template/assets/css/ee3271c8.css';
+@import './katsudoto-template/assets/css/swiper-bundle.min.css';
+@import './katsudoto-template/assets/css/efbc5ba8.css';
+
+/* Original theme variables override */
+body.ningrum {
+    --heading-size: 48px !important;
+    --body-text-size: 16px !important;
+    --background-primary: #17130E !important;
+    --background-primary-rgb: 23, 19, 14 !important;
+    --background-secondary: #E7E4DB !important;
+    --background-secondary-rgb: 231, 228, 219 !important;
+    --background-tertiary: #48110C !important;
+    --background-tertiary-rgb: 72, 17, 12 !important;
+    --text-primary: #A29166 !important;
+    --text-primary-rgb: 162, 145, 102 !important;
+    --text-secondary: #E7E4DB !important;
+    --text-secondary-rgb: 231, 228, 219 !important;
+    --text-tertiary: #48110C !important;
+    --text-tertiary-rgb: 72, 17, 12 !important;
+    --button-text-primary: #E7E4DB !important;
+    --button-text-primary-rgb: 231, 228, 219 !important;
+    --button-background-primary: #A29166 !important;
+    --button-background-primary-rgb: 162, 145, 102 !important;
+    --button-text-secondary: #E7E4DB !important;
+    --button-text-secondary-rgb: 231, 228, 219 !important;
+    --button-background-secondary: #56483B !important;
+    --button-background-secondary-rgb: 86, 72, 59 !important;
+}
+
+
