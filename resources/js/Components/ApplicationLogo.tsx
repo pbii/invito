@@ -31,10 +31,10 @@ export default function ApplicationLogo(props: HTMLAttributes<HTMLDivElement>) {
                 </div>
             )}
             <div className="flex flex-col text-left">
-                <span className="font-serif text-xl font-bold tracking-tight text-gray-900 leading-none">
+                <span className="font-serif text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none">
                     {appName}
                 </span>
-                <span className="text-[10px] uppercase tracking-widest font-semibold text-gray-400 mt-0.5 truncate max-w-[150px]">
+                <span className="text-[10px] uppercase tracking-widest font-semibold text-gray-400 dark:text-neutral-400 mt-0.5 truncate max-w-[150px]">
                     {appTagline}
                 </span>
             </div>

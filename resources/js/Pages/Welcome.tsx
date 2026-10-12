@@ -1,6 +1,7 @@
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import EmptyState from "@/Components/EmptyState";
 import SearchInput from "@/Components/SearchInput";
+import ThemeToggle from "@/Components/ThemeToggle";
 import { Package, PageProps, Template, TemplateCategory } from "@/types";
 import { Head, Link, usePage } from "@inertiajs/react";
 import React, { useMemo, useState } from "react";
@@ -63,38 +64,40 @@ export default function Welcome({
     };
 
     return (
-        <div className="min-h-screen bg-neutral-50/70 text-gray-800 font-sans selection:bg-admin-primary/20 selection:text-admin-primary">
+        <div className="min-h-screen bg-neutral-50/70 dark:bg-neutral-950 text-gray-800 dark:text-neutral-100 font-sans selection:bg-admin-primary/20 selection:text-admin-primary transition-colors duration-200">
             <Head title={`${appName} - ${appTagline}`} />
 
             {/* Navigation Header */}
-            <header className="sticky top-0 z-40 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+            <header className="sticky top-0 z-40 border-b border-gray-100 dark:border-neutral-800/80 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md">
                 <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                     <Link href="/">
                         <ApplicationLogo />
                     </Link>
 
-                    <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                    <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-neutral-400">
                         <a
                             href="#features"
-                            className="hover:text-admin-primary transition"
+                            className="hover:text-admin-primary dark:hover:text-white transition"
                         >
                             Fitur
                         </a>
                         <a
                             href="#templates"
-                            className="hover:text-admin-primary transition"
+                            className="hover:text-admin-primary dark:hover:text-white transition"
                         >
                             Pilihan Desain
                         </a>
                         <a
                             href="#pricing"
-                            className="hover:text-admin-primary transition"
+                            className="hover:text-admin-primary dark:hover:text-white transition"
                         >
                             Paket Harga
                         </a>
                     </nav>
 
                     <div className="flex items-center gap-3">
+                        <ThemeToggle />
+
                         {auth.user ? (
                             <Link
                                 href={
@@ -126,7 +129,7 @@ export default function Welcome({
                                 {canLogin && (
                                     <Link
                                         href={route("login")}
-                                        className="rounded-xl px-4 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 transition"
+                                        className="rounded-xl px-4 py-2 text-xs font-semibold text-gray-700 dark:text-neutral-300 hover:text-gray-900 dark:hover:text-white transition"
                                     >
                                         Masuk
                                     </Link>
@@ -147,10 +150,10 @@ export default function Welcome({
 
             {/* Hero Section */}
             <section className="relative overflow-hidden py-20 sm:py-28">
-                <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-radial from-admin-primary/15 via-admin-secondary/10 to-transparent blur-3xl" />
+                <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-radial from-admin-primary/15 via-admin-secondary/10 to-transparent blur-3xl dark:from-admin-primary/25 dark:via-admin-secondary/15" />
 
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 leading-tight">
+                    <h1 className="font-serif text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
                         Bagikan Momen Bahagia Anda{" "}
                         <br className="hidden sm:inline" />
                         dengan Sentuhan{" "}
@@ -159,7 +162,7 @@ export default function Welcome({
                         </span>
                     </h1>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-gray-600 leading-relaxed">
+                    <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed">
                         Ciptakan website undangan digital interaktif dalam
                         hitungan menit. Dilengkapi audio otomatis, amplop
                         digital, RSVP instan via WhatsApp, dan galeri beresolusi
@@ -196,7 +199,7 @@ export default function Welcome({
                         </Link>
                         <a
                             href="#templates"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-semibold text-gray-700 shadow-2xs hover:bg-gray-50 transition"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-6 py-3.5 text-sm font-semibold text-gray-700 dark:text-neutral-200 shadow-2xs hover:bg-gray-50 dark:hover:bg-neutral-800 transition"
                         >
                             Jelajahi Template
                         </a>
@@ -207,22 +210,22 @@ export default function Welcome({
             {/* Features Highlight */}
             <section
                 id="features"
-                className="py-16 bg-white border-y border-gray-100"
+                className="py-16 bg-white dark:bg-neutral-900 border-y border-gray-100 dark:border-neutral-800 transition-colors duration-200"
             >
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-xl mx-auto mb-12">
-                        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900">
+                        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
                             Mengundang dengan Hangat dan Penuh Penghormatan
                         </h2>
-                        <p className="mt-2 text-xs sm:text-sm text-gray-500">
+                        <p className="mt-2 text-xs sm:text-sm text-gray-500 dark:text-neutral-400">
                             Setiap detail dirancang agar keluarga, sahabat, dan kerabat
                             merasa dihargai sejak pertama kali membuka undangan Anda.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="rounded-2xl border border-gray-100 p-6 bg-neutral-50/50 hover:bg-white hover:border-wedding-200 transition shadow-2xs">
-                            <div className="w-10 h-10 rounded-xl bg-wedding-100 text-wedding-600 flex items-center justify-center mb-4">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                            <div className="w-10 h-10 rounded-xl bg-wedding-100 dark:bg-wedding-900/40 text-wedding-600 dark:text-wedding-400 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
                                     fill="none"
@@ -237,17 +240,17 @@ export default function Welcome({
                                     />
                                 </svg>
                             </div>
-                            <h3 className="font-semibold text-gray-900 text-base mb-2">
+                            <h3 className="font-semibold text-gray-900 dark:text-white text-base mb-2">
                                 Undangan Personal untuk Setiap Tamu
                             </h3>
-                            <p className="text-xs text-gray-500 leading-relaxed">
+                            <p className="text-xs text-gray-500 dark:text-neutral-400 leading-relaxed">
                                 Cantumkan nama tamu dan kuota keluarga secara khusus di sampul depan.
                                 Kirimkan tautan personal lewat WhatsApp dengan sapaan yang santun dan rapi.
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-gray-100 p-6 bg-neutral-50/50 hover:bg-white hover:border-wedding-200 transition shadow-2xs">
-                            <div className="w-10 h-10 rounded-xl bg-champagne-200 text-champagne-800 flex items-center justify-center mb-4">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                            <div className="w-10 h-10 rounded-xl bg-champagne-200 dark:bg-champagne-900/40 text-champagne-800 dark:text-champagne-300 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
                                     fill="none"
@@ -262,17 +265,17 @@ export default function Welcome({
                                     />
                                 </svg>
                             </div>
-                            <h3 className="font-semibold text-gray-900 text-base mb-2">
+                            <h3 className="font-semibold text-gray-900 dark:text-white text-base mb-2">
                                 Tanda Kasih &amp; Doa Restu
                             </h3>
-                            <p className="text-xs text-gray-500 leading-relaxed">
+                            <p className="text-xs text-gray-500 dark:text-neutral-400 leading-relaxed">
                                 Memudahkan kerabat yang ingin menyampaikan bingkisan atau tanda kasih
                                 nontunai lewat transfer bank, e-wallet, maupun scan QRIS langsung di halaman undangan.
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-gray-100 p-6 bg-neutral-50/50 hover:bg-white hover:border-wedding-200 transition shadow-2xs">
-                            <div className="w-10 h-10 rounded-xl bg-wedding-100 text-wedding-600 flex items-center justify-center mb-4">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                            <div className="w-10 h-10 rounded-xl bg-wedding-100 dark:bg-wedding-900/40 text-wedding-600 dark:text-wedding-400 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
                                     fill="none"
@@ -287,10 +290,10 @@ export default function Welcome({
                                     />
                                 </svg>
                             </div>
-                            <h3 className="font-semibold text-gray-900 text-base mb-2">
+                            <h3 className="font-semibold text-gray-900 dark:text-white text-base mb-2">
                                 Alunan Musik &amp; Sampul Pembuka
                             </h3>
-                            <p className="text-xs text-gray-500 leading-relaxed">
+                            <p className="text-xs text-gray-500 dark:text-neutral-400 leading-relaxed">
                                 Hadirkan kesan khidmat sejak detik pertama. Musik pengiring favorit Anda
                                 langsung mengalun lembut begitu tamu menekan tombol buka undangan di ponsel mereka.
                             </p>
@@ -307,10 +310,10 @@ export default function Welcome({
                             <span className="text-xs font-bold uppercase tracking-widest text-admin-primary">
                                 Koleksi Eksklusif
                             </span>
-                            <h2 className="mt-1 font-serif text-3xl font-bold tracking-tight text-gray-900">
+                            <h2 className="mt-1 font-serif text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Pilihan Desain &amp; Tema Undangan
                             </h2>
-                            <p className="mt-1 text-xs sm:text-sm text-gray-500">
+                            <p className="mt-1 text-xs sm:text-sm text-gray-500 dark:text-neutral-400">
                                 Cari dan saring katalog template undangan dengan
                                 sentuhan estetika pilihan.
                             </p>
@@ -327,14 +330,14 @@ export default function Welcome({
                     </div>
 
                     {/* Category Filter Tabs */}
-                    <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 pb-4">
+                    <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 dark:border-neutral-800 pb-4">
                         <button
                             type="button"
                             onClick={() => setSelectedCategory("all")}
                             className={`rounded-xl px-4 py-2 text-xs font-semibold transition ${
                                 selectedCategory === "all"
                                     ? "bg-admin-primary text-white shadow-xs"
-                                    : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
+                                    : "bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800"
                             }`}
                         >
                             Semua Tema ({templates.length})
@@ -349,7 +352,7 @@ export default function Welcome({
                                 className={`rounded-xl px-4 py-2 text-xs font-semibold transition ${
                                     selectedCategory === (cat.slug || cat.id)
                                         ? "bg-admin-primary text-white shadow-xs"
-                                        : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
+                                        : "bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800"
                                 }`}
                             >
                                 {cat.name}
@@ -368,9 +371,9 @@ export default function Welcome({
                             {filteredTemplates.map((template) => (
                                 <div
                                     key={template.id}
-                                    className="group overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-wedding-200 hover:shadow-xl"
+                                    className="group overflow-hidden rounded-3xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-wedding-200 dark:hover:border-neutral-700 hover:shadow-xl"
                                 >
-                                    <div className="relative aspect-[2/1] w-full overflow-hidden bg-gray-100">
+                                    <div className="relative aspect-[2/1] w-full overflow-hidden bg-gray-100 dark:bg-neutral-800">
                                         <img
                                             src={
                                                 template.thumbnail_url ||
@@ -385,7 +388,7 @@ export default function Welcome({
                                             }}
                                             className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
                                         />
-                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 p-4">
+                                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 p-4">
                                             <button
                                                 type="button"
                                                 onClick={() =>
@@ -408,14 +411,14 @@ export default function Welcome({
 
                                     <div className="p-6">
                                         <div className="flex items-center justify-between mb-2">
-                                            <h3 className="font-serif text-lg font-bold text-gray-900">
+                                            <h3 className="font-serif text-lg font-bold text-gray-900 dark:text-white">
                                                 {template.name}
                                             </h3>
-                                            <span className="text-[10px] font-semibold text-admin-primary bg-admin-primary/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                                            <span className="text-[10px] font-semibold text-admin-primary bg-admin-primary/10 dark:bg-admin-primary/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
                                                 Tersedia
                                             </span>
                                         </div>
-                                        <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">
+                                        <p className="text-xs text-gray-500 dark:text-neutral-400 line-clamp-2 leading-relaxed">
                                             {template.description ||
                                                 "Desain undangan premium dengan tata letak responsif dan animasi lembut."}
                                         </p>
@@ -431,17 +434,17 @@ export default function Welcome({
             {packages.length > 0 && (
                 <section
                     id="pricing"
-                    className="py-20 bg-white border-t border-gray-100"
+                    className="py-20 bg-white dark:bg-neutral-900 border-t border-gray-100 dark:border-neutral-800 transition-colors duration-200"
                 >
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center max-w-xl mx-auto mb-14">
                             <span className="text-xs font-bold uppercase tracking-widest text-admin-primary">
                                 Investasi Bahagia
                             </span>
-                            <h2 className="mt-1 font-serif text-3xl font-bold text-gray-900">
+                            <h2 className="mt-1 font-serif text-3xl font-bold text-gray-900 dark:text-white">
                                 Pilihan Paket Sesuai Kebutuhan Anda
                             </h2>
-                            <p className="mt-2 text-xs sm:text-sm text-gray-500">
+                            <p className="mt-2 text-xs sm:text-sm text-gray-500 dark:text-neutral-400">
                                 Tanpa biaya tersembunyi. Dapatkan seluruh fitur
                                 terbaik untuk perayaan sekali seumur hidup.
                             </p>
@@ -453,8 +456,8 @@ export default function Welcome({
                                     key={pkg.id}
                                     className={`relative flex flex-col justify-between rounded-3xl p-8 border transition ${
                                         pkg.badge
-                                            ? "border-admin-primary shadow-xl shadow-admin-primary/10 bg-white ring-2 ring-admin-primary"
-                                            : "border-gray-100 bg-white shadow-xs hover:border-gray-200"
+                                            ? "border-admin-primary shadow-xl shadow-admin-primary/10 bg-white dark:bg-neutral-850 ring-2 ring-admin-primary"
+                                            : "border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-850 shadow-xs hover:border-gray-200 dark:hover:border-neutral-700"
                                     }`}
                                 >
                                     {pkg.badge && (
@@ -464,23 +467,23 @@ export default function Welcome({
                                     )}
 
                                     <div>
-                                        <h3 className="font-serif text-xl font-bold text-gray-900">
+                                        <h3 className="font-serif text-xl font-bold text-gray-900 dark:text-white">
                                             {pkg.name}
                                         </h3>
-                                        <p className="mt-1 text-xs text-gray-500 line-clamp-2">
+                                        <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400 line-clamp-2">
                                             {pkg.description}
                                         </p>
 
                                         <div className="mt-6 flex items-baseline gap-1">
-                                            <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900">
+                                            <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                                                 {formatPrice(pkg.price)}
                                             </span>
-                                            <span className="text-xs text-gray-400">
+                                            <span className="text-xs text-gray-400 dark:text-neutral-500">
                                                 / selamanya
                                             </span>
                                         </div>
 
-                                        <ul className="mt-6 space-y-3 text-xs text-gray-600">
+                                        <ul className="mt-6 space-y-3 text-xs text-gray-600 dark:text-neutral-300">
                                             <li className="flex items-center gap-2">
                                                 <svg
                                                     className="w-4 h-4 text-emerald-500 shrink-0"
@@ -587,7 +590,7 @@ export default function Welcome({
                                             className={`w-full inline-flex items-center justify-center rounded-xl py-3 text-xs font-semibold transition ${
                                                 pkg.badge
                                                     ? "bg-admin-primary text-white shadow-xs hover:brightness-110"
-                                                    : "border border-gray-200 bg-white text-gray-700 hover:bg-gray-50"
+                                                    : "border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-750"
                                             }`}
                                         >
                                             Pilih {pkg.name}
@@ -601,12 +604,12 @@ export default function Welcome({
             )}
 
             {/* Footer */}
-            <footer className="border-t border-gray-200 bg-white py-12">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-400">
-                    <p className="font-serif text-lg font-bold text-gray-800 mb-2">
+            <footer className="border-t border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 py-12 transition-colors duration-200">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-xs text-gray-400 dark:text-neutral-500">
+                    <p className="font-serif text-lg font-bold text-gray-800 dark:text-white mb-2">
                         {appName}
                     </p>
-                    <p className="max-w-md mx-auto mb-6">
+                    <p className="max-w-md mx-auto mb-6 dark:text-neutral-400">
                         Solusi terbaik undangan digital pernikahan masa kini
                         dengan performa cepat, tampilan elegan, dan kontrol
                         penuh mempelai.
@@ -621,19 +624,19 @@ export default function Welcome({
             {/* Template Interactive Preview Modal */}
             {previewTemplate && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
-                    <div className="w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl border border-gray-100 flex flex-col max-h-[90vh]">
+                    <div className="w-full max-w-2xl overflow-hidden rounded-3xl bg-white dark:bg-neutral-900 shadow-2xl border border-gray-100 dark:border-neutral-800 flex flex-col max-h-[90vh]">
                         {/* Modal Header */}
-                        <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+                        <div className="flex items-center justify-between border-b border-gray-100 dark:border-neutral-800 px-6 py-4">
                             <div className="flex items-center gap-2.5">
                                 <span className="h-2.5 w-2.5 rounded-full bg-admin-primary" />
-                                <h3 className="font-serif text-lg font-bold text-gray-900">
+                                <h3 className="font-serif text-lg font-bold text-gray-900 dark:text-white">
                                     Pratinjau Desain: {previewTemplate.name}
                                 </h3>
                             </div>
                             <button
                                 type="button"
                                 onClick={() => setPreviewTemplate(null)}
-                                className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-700 transition"
+                                className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 transition"
                             >
                                 <svg
                                     className="h-5 w-5"
@@ -653,7 +656,7 @@ export default function Welcome({
 
                         {/* Modal Body */}
                         <div className="overflow-y-auto p-6 space-y-4">
-                            <div className="relative aspect-[16/9] max-h-72 w-full overflow-hidden rounded-2xl bg-gray-100 border border-gray-200/60 shadow-inner">
+                            <div className="relative aspect-[16/9] max-h-72 w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-neutral-800 border border-gray-200/60 dark:border-neutral-700 shadow-inner">
                                 <img
                                     src={
                                         previewTemplate.thumbnail_url ||
@@ -675,16 +678,16 @@ export default function Welcome({
                                     {previewTemplate.categories?.map((c) => (
                                         <span
                                             key={c.id}
-                                            className="rounded-full bg-neutral-100 px-3 py-1 text-[11px] font-semibold text-neutral-700"
+                                            className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-[11px] font-semibold text-neutral-700 dark:text-neutral-300"
                                         >
                                             {c.name}
                                         </span>
                                     ))}
-                                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700 border border-emerald-100">
+                                    <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-800/40">
                                         Tersedia di Seluruh Paket
                                     </span>
                                 </div>
-                                <p className="text-sm text-gray-600 leading-relaxed">
+                                <p className="text-sm text-gray-600 dark:text-neutral-300 leading-relaxed">
                                     {previewTemplate.description ||
                                         "Desain undangan pernikahan premium yang responsif dengan animasi estetik, audio latar, hitung mundur, galeri foto, amplop digital, dan buku tamu RSVP interaktif."}
                                 </p>
@@ -692,11 +695,11 @@ export default function Welcome({
                         </div>
 
                         {/* Modal Footer */}
-                        <div className="flex items-center justify-end gap-3 border-t border-gray-100 px-6 py-4 bg-gray-50/50">
+                        <div className="flex items-center justify-end gap-3 border-t border-gray-100 dark:border-neutral-800 px-6 py-4 bg-gray-50/50 dark:bg-neutral-850">
                             <button
                                 type="button"
                                 onClick={() => setPreviewTemplate(null)}
-                                className="rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition"
+                                className="rounded-xl border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-2.5 text-xs font-semibold text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-700 transition"
                             >
                                 Tutup
                             </button>

@@ -235,7 +235,7 @@ export default function CreateInvitation({
         <AuthenticatedLayout
             header={
                 <div className="flex flex-col gap-2">
-                    <h2 className="text-xl font-bold leading-tight text-gray-800">
+                    <h2 className="text-xl font-bold leading-tight text-gray-800 dark:text-white">
                         Buat Undangan Baru
                     </h2>
                 </div>
@@ -246,7 +246,7 @@ export default function CreateInvitation({
             <div className="py-8">
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                     {/* Stepper Wizard Indicator */}
-                    <div className="mb-8 rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+                    <div className="mb-8 rounded-xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-6 shadow-sm">
                         <div className="flex items-center justify-between">
                             {steps.map((s, idx) => (
                                 <React.Fragment key={s.number}>
@@ -257,7 +257,7 @@ export default function CreateInvitation({
                                                     ? "bg-admin-primary text-white shadow-md shadow-admin-primary/20"
                                                     : currentStep > s.number
                                                       ? "bg-emerald-500 text-white"
-                                                      : "bg-gray-100 text-gray-400"
+                                                      : "bg-gray-100 dark:bg-neutral-800 text-gray-400 dark:text-neutral-500"
                                             }`}
                                         >
                                             {currentStep > s.number ? (
@@ -282,7 +282,7 @@ export default function CreateInvitation({
                                             className={`mt-2 hidden text-xs font-medium sm:block ${
                                                 currentStep === s.number
                                                     ? "text-admin-primary font-bold"
-                                                    : "text-gray-500"
+                                                    : "text-gray-500 dark:text-neutral-400"
                                             }`}
                                         >
                                             {s.title}
@@ -293,7 +293,7 @@ export default function CreateInvitation({
                                             className={`h-0.5 flex-1 transition ${
                                                 currentStep > s.number
                                                     ? "bg-emerald-500"
-                                                    : "bg-gray-200"
+                                                    : "bg-gray-200 dark:bg-neutral-800"
                                             }`}
                                         />
                                     )}
@@ -303,7 +303,7 @@ export default function CreateInvitation({
                     </div>
 
                     {/* Step Contents */}
-                    <div className="rounded-xl border border-gray-100 bg-white p-6 sm:p-8 shadow-sm">
+                    <div className="rounded-xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-6 sm:p-8 shadow-sm">
                         {/* STEP 1: PILIH TEMPLATE & PAKET */}
                         {currentStep === 1 && (
                             <div className="space-y-8">
@@ -1678,7 +1678,7 @@ export default function CreateInvitation({
                                 <button
                                     type="button"
                                     onClick={handleBack}
-                                    className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+                                    className="rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-neutral-200 shadow-sm transition hover:bg-gray-50 dark:hover:bg-neutral-700"
                                 >
                                     Kembali
                                 </button>

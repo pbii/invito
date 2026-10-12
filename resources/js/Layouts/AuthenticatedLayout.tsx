@@ -2,6 +2,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
+import ThemeToggle from '@/Components/ThemeToggle';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
@@ -15,8 +16,8 @@ export default function Authenticated({
         useState(false);
 
     return (
-        <div className="min-h-screen bg-neutral-50/60 font-sans selection:bg-admin-primary/20 selection:text-admin-primary">
-            <nav className="sticky top-0 z-30 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+        <div className="min-h-screen bg-neutral-50/60 dark:bg-neutral-950 font-sans text-gray-800 dark:text-neutral-100 selection:bg-admin-primary/20 selection:text-admin-primary transition-colors duration-200">
+            <nav className="sticky top-0 z-30 border-b border-gray-100 dark:border-neutral-800 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
                         <div className="flex items-center">
@@ -56,14 +57,16 @@ export default function Authenticated({
                             </div>
                         </div>
 
-                        <div className="hidden sm:ms-6 sm:flex sm:items-center">
-                            <div className="relative ms-3">
+                        <div className="hidden sm:ms-6 sm:flex sm:items-center sm:gap-3">
+                            <ThemeToggle />
+
+                            <div className="relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-xs transition hover:bg-gray-50 focus:outline-none"
+                                                className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-850 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-neutral-200 shadow-xs transition hover:bg-gray-50 dark:hover:bg-neutral-800 focus:outline-none"
                                             >
                                                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-admin-primary/10 text-xs font-bold text-admin-primary">
                                                     {user.name.charAt(0).toUpperCase()}
@@ -71,7 +74,7 @@ export default function Authenticated({
                                                 <span>{user.name}</span>
 
                                                 <svg
-                                                    className="h-4 w-4 text-gray-400"
+                                                    className="h-4 w-4 text-gray-400 dark:text-neutral-500"
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -102,14 +105,16 @@ export default function Authenticated({
                             </div>
                         </div>
 
-                        <div className="-me-2 flex items-center sm:hidden">
+                        <div className="-me-2 flex items-center gap-2 sm:hidden">
+                            <ThemeToggle />
+
                             <button
                                 onClick={() =>
                                     setShowingNavigationDropdown(
                                         (previousState) => !previousState,
                                     )
                                 }
-                                className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition duration-150 ease-in-out hover:bg-gray-100 hover:text-gray-500 focus:bg-gray-100 focus:text-gray-500 focus:outline-none"
+                                className="inline-flex items-center justify-center rounded-xl p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 focus:outline-none transition duration-150"
                             >
                                 <svg
                                     className="h-6 w-6"
@@ -148,7 +153,7 @@ export default function Authenticated({
                 <div
                     className={
                         (showingNavigationDropdown ? 'block' : 'hidden') +
-                        ' sm:hidden'
+                        ' sm:hidden border-b border-gray-100 dark:border-neutral-800 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md'
                     }
                 >
                     <div className="space-y-1 pb-3 pt-2">
@@ -177,12 +182,12 @@ export default function Authenticated({
                         )}
                     </div>
 
-                    <div className="border-t border-gray-200 pb-1 pt-4">
+                    <div className="border-t border-gray-200 dark:border-neutral-800 pb-3 pt-4">
                         <div className="px-4">
-                            <div className="text-base font-medium text-gray-800">
+                            <div className="text-base font-medium text-gray-800 dark:text-neutral-100">
                                 {user.name}
                             </div>
-                            <div className="text-sm font-medium text-gray-500">
+                            <div className="text-sm font-medium text-gray-500 dark:text-neutral-400">
                                 {user.email}
                             </div>
                         </div>
@@ -204,7 +209,7 @@ export default function Authenticated({
             </nav>
 
             {header && (
-                <header className="bg-white shadow">
+                <header className="bg-white dark:bg-neutral-900 border-b border-gray-100 dark:border-neutral-800 shadow-xs">
                     <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                         {header}
                     </div>

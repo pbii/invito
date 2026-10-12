@@ -79,7 +79,7 @@ export default function EditInvitation({
                             <span>/</span>
                             <span>Edit Undangan</span>
                         </div>
-                        <h2 className="mt-1 text-xl font-bold leading-tight text-gray-800">
+                        <h2 className="mt-1 text-xl font-bold leading-tight text-gray-800 dark:text-white">
                             Edit Undangan: {invitation.groom_name} & {invitation.bride_name}
                         </h2>
                     </div>
@@ -92,40 +92,40 @@ export default function EditInvitation({
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Data Mempelai */}
-                        <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-xs">
-                            <h3 className="text-sm font-bold text-gray-900 mb-4">Informasi Mempelai</h3>
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-6 shadow-xs">
+                            <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-4">Informasi Mempelai</h3>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-700">Nama Mempelai Pria</label>
+                                    <label className="block text-xs font-semibold text-gray-700 dark:text-neutral-300">Nama Mempelai Pria</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.groom_name}
                                         onChange={(e) => setFormData({ ...formData, groom_name: e.target.value })}
-                                        className="mt-1 block w-full rounded-xl border-gray-200 text-sm focus:border-admin-primary focus:ring-admin-primary"
+                                        className="mt-1 block w-full rounded-xl border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white text-sm focus:border-admin-primary focus:ring-admin-primary"
                                     />
                                     {errors.groom_name && <p className="mt-1 text-xs text-red-500">{errors.groom_name}</p>}
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-700">Nama Mempelai Wanita</label>
+                                    <label className="block text-xs font-semibold text-gray-700 dark:text-neutral-300">Nama Mempelai Wanita</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.bride_name}
                                         onChange={(e) => setFormData({ ...formData, bride_name: e.target.value })}
-                                        className="mt-1 block w-full rounded-xl border-gray-200 text-sm focus:border-admin-primary focus:ring-admin-primary"
+                                        className="mt-1 block w-full rounded-xl border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white text-sm focus:border-admin-primary focus:ring-admin-primary"
                                     />
                                     {errors.bride_name && <p className="mt-1 text-xs text-red-500">{errors.bride_name}</p>}
                                 </div>
 
                                 <div>
-                                    <label className="block text-xs font-semibold text-gray-700">Custom Slug Undangan</label>
+                                    <label className="block text-xs font-semibold text-gray-700 dark:text-neutral-300">Custom Slug Undangan</label>
                                     <input
                                         type="text"
                                         required
                                         value={formData.slug}
                                         onChange={(e) => setFormData({ ...formData, slug: e.target.value.toLowerCase().replace(/[^a-z0-9\-]/g, '') })}
-                                        className="mt-1 block w-full rounded-xl border-gray-200 text-sm font-mono focus:border-admin-primary focus:ring-admin-primary"
+                                        className="mt-1 block w-full rounded-xl border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-white text-sm font-mono focus:border-admin-primary focus:ring-admin-primary"
                                     />
                                     {errors.slug && <p className="mt-1 text-xs text-red-500">{errors.slug}</p>}
                                 </div>
@@ -166,7 +166,7 @@ export default function EditInvitation({
                         <div className="flex justify-end space-x-3">
                             <Link
                                 href={route('dashboard')}
-                                className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                                className="rounded-lg border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-5 py-2.5 text-sm font-semibold text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-700"
                             >
                                 Batal
                             </Link>

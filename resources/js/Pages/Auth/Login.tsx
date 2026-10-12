@@ -32,23 +32,23 @@ export default function Login({
             <Head title="Masuk ke Akun" />
 
             <div className="mb-6 text-center">
-                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Selamat Datang Kembali
                 </h1>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">
                     Masuk untuk mengelola undangan pernikahan Anda
                 </p>
             </div>
 
             {status && (
-                <div className="mb-4 rounded-xl bg-emerald-50 p-3 text-xs font-medium text-emerald-700 border border-emerald-200">
+                <div className="mb-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 p-3 text-xs font-medium text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/40">
                     {status}
                 </div>
             )}
 
             <form onSubmit={submit} className="space-y-4">
                 <div>
-                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700" />
+                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
 
                     <TextInput
                         id="email"
@@ -67,7 +67,7 @@ export default function Login({
 
                 <div>
                     <div className="flex items-center justify-between">
-                        <InputLabel htmlFor="password" value="Kata Sandi" className="text-xs font-semibold text-gray-700" />
+                        <InputLabel htmlFor="password" value="Kata Sandi" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
                         {canResetPassword && (
                             <Link
                                 href={route('password.request')}
@@ -105,7 +105,7 @@ export default function Login({
                                 )
                             }
                         />
-                        <span className="ms-2 text-xs text-gray-600">
+                        <span className="ms-2 text-xs text-gray-600 dark:text-neutral-300">
                             Ingat Saya
                         </span>
                     </label>
@@ -121,8 +121,8 @@ export default function Login({
                     </button>
                 </div>
 
-                <div className="pt-4 text-center border-t border-gray-100">
-                    <p className="text-xs text-gray-500">
+                <div className="pt-4 text-center border-t border-gray-100 dark:border-neutral-800">
+                    <p className="text-xs text-gray-500 dark:text-neutral-400">
                         Belum punya akun?{' '}
                         <Link
                             href={route('register')}

@@ -14,8 +14,8 @@ export default function EmptyState({
     icon,
 }: EmptyStateProps) {
     return (
-        <div className="flex flex-col items-center justify-center text-center p-8 sm:p-12 border-2 border-dashed border-gray-200 rounded-2xl bg-white/50 backdrop-blur-xs">
-            <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-admin-primary/10 text-admin-primary mb-4 shadow-xs">
+        <div className="flex flex-col items-center justify-center text-center p-8 sm:p-12 border-2 border-dashed border-gray-200 dark:border-neutral-800 rounded-2xl bg-white/50 dark:bg-neutral-900/50 backdrop-blur-xs">
+            <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-admin-primary/10 dark:bg-admin-primary/20 text-admin-primary mb-4 shadow-xs">
                 {icon || (
                     <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -27,9 +27,9 @@ export default function EmptyState({
                     </svg>
                 )}
             </div>
-            <h4 className="text-base font-semibold text-gray-900 mb-1">{title}</h4>
+            <h4 className="text-base font-semibold text-gray-900 dark:text-white mb-1">{title}</h4>
             {description && (
-                <p className="text-sm text-gray-500 max-w-sm mb-5">{description}</p>
+                <p className="text-sm text-gray-500 dark:text-neutral-400 max-w-sm mb-5">{description}</p>
             )}
             {action && <div>{action}</div>}
         </div>

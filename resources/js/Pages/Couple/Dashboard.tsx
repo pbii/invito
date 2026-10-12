@@ -92,7 +92,7 @@ export default function CoupleDashboard({
             header={
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                        <h2 className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                        <h2 className="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             Dashboard Undangan
                         </h2>
                     </div>
@@ -124,9 +124,9 @@ export default function CoupleDashboard({
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
                     {/* Metrics Banner */}
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
-                        <div className="relative overflow-hidden rounded-2xl border border-admin-primary/20 bg-linear-to-br from-white to-admin-primary/5 p-6 shadow-xs transition hover:shadow-md">
+                        <div className="relative overflow-hidden rounded-2xl border border-admin-primary/20 dark:border-neutral-800 bg-linear-to-br from-white to-admin-primary/5 dark:from-neutral-900 dark:to-neutral-900/80 p-6 shadow-xs transition hover:shadow-md">
                             <div className="flex items-center gap-4">
-                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-admin-primary/10 text-admin-primary">
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-admin-primary/10 dark:bg-admin-primary/20 text-admin-primary">
                                     <svg
                                         className="h-6 w-6"
                                         fill="none"
@@ -142,14 +142,14 @@ export default function CoupleDashboard({
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-neutral-400">
                                         Total Undangan
                                     </p>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900">
+                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                                             {statistics.total_invitations}
                                         </span>
-                                        <span className="text-xs text-gray-400">
+                                        <span className="text-xs text-gray-400 dark:text-neutral-500">
                                             tema aktif
                                         </span>
                                     </div>
@@ -157,9 +157,9 @@ export default function CoupleDashboard({
                             </div>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-2xl border border-sky-100 bg-linear-to-br from-white to-sky-50/30 p-6 shadow-xs transition hover:shadow-md">
+                        <div className="relative overflow-hidden rounded-2xl border border-sky-100 dark:border-neutral-800 bg-linear-to-br from-white to-sky-50/30 dark:from-neutral-900 dark:to-neutral-900/80 p-6 shadow-xs transition hover:shadow-md">
                             <div className="flex items-center gap-4">
-                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-700">
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-100 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300">
                                     <svg
                                         className="h-6 w-6"
                                         fill="none"
@@ -175,14 +175,14 @@ export default function CoupleDashboard({
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-neutral-400">
                                         Buku Tamu
                                     </p>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900">
+                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                                             {statistics.total_guests}
                                         </span>
-                                        <span className="text-xs text-gray-400">
+                                        <span className="text-xs text-gray-400 dark:text-neutral-500">
                                             tamu terdaftar
                                         </span>
                                     </div>
@@ -190,9 +190,9 @@ export default function CoupleDashboard({
                             </div>
                         </div>
 
-                        <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-linear-to-br from-white to-emerald-50/30 p-6 shadow-xs transition hover:shadow-md">
+                        <div className="relative overflow-hidden rounded-2xl border border-emerald-100 dark:border-neutral-800 bg-linear-to-br from-white to-emerald-50/30 dark:from-neutral-900 dark:to-neutral-900/80 p-6 shadow-xs transition hover:shadow-md">
                             <div className="flex items-center gap-4">
-                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300">
                                     <svg
                                         className="h-6 w-6"
                                         fill="none"
@@ -208,14 +208,14 @@ export default function CoupleDashboard({
                                     </svg>
                                 </div>
                                 <div>
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-neutral-400">
                                         Konfirmasi RSVP
                                     </p>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900">
+                                        <span className="font-sans text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                                             {statistics.total_rsvps}
                                         </span>
-                                        <span className="text-xs text-gray-400">
+                                        <span className="text-xs text-gray-400 dark:text-neutral-500">
                                             respons tamu
                                         </span>
                                     </div>
@@ -225,7 +225,7 @@ export default function CoupleDashboard({
                     </div>
 
                     {/* Filter & Search Bar */}
-                    <div className="flex flex-col gap-4 rounded-2xl border border-gray-100 bg-white p-5 shadow-xs sm:flex-row sm:items-center sm:justify-between">
+                    <div className="flex flex-col gap-4 rounded-2xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 p-5 shadow-xs sm:flex-row sm:items-center sm:justify-between">
                         <div className="w-full sm:max-w-md">
                             <SearchInput
                                 value={search}
@@ -236,7 +236,7 @@ export default function CoupleDashboard({
 
                         {/* Status Filters */}
                         <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-xs font-medium text-gray-400 mr-1">
+                            <span className="text-xs font-medium text-gray-400 dark:text-neutral-500 mr-1">
                                 Status:
                             </span>
                             {[
@@ -252,7 +252,7 @@ export default function CoupleDashboard({
                                     className={`rounded-xl px-3.5 py-1.5 text-xs font-semibold transition-all ${
                                         status === tab.id
                                             ? "bg-admin-primary text-white shadow-xs"
-                                            : "bg-gray-50 text-gray-600 hover:bg-gray-100"
+                                            : "bg-gray-50 dark:bg-neutral-800 text-gray-600 dark:text-neutral-300 hover:bg-gray-100 dark:hover:bg-neutral-700"
                                     }`}
                                 >
                                     {tab.label}
@@ -289,11 +289,11 @@ export default function CoupleDashboard({
                                 return (
                                     <div
                                         key={invitation.id}
-                                        className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-admin-primary/40 hover:shadow-xl hover:shadow-admin-primary/5"
+                                        className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-admin-primary/40 dark:hover:border-neutral-700 hover:shadow-xl hover:shadow-admin-primary/5"
                                     >
                                         <div>
                                             {/* Header Card / Thumbnail Banner */}
-                                            <div className="relative h-28 sm:h-32 w-full overflow-hidden bg-neutral-100">
+                                            <div className="relative h-28 sm:h-32 w-full overflow-hidden bg-neutral-100 dark:bg-neutral-800">
                                                 <img
                                                     src={
                                                         invitation.template?.thumbnail_url ||
@@ -358,7 +358,7 @@ export default function CoupleDashboard({
 
                                             {/* Details Body */}
                                             <div className="p-5 space-y-4">
-                                                <div className="flex items-center justify-between text-xs text-gray-500 border-b border-gray-100 pb-3">
+                                                <div className="flex items-center justify-between text-xs text-gray-500 dark:text-neutral-400 border-b border-gray-100 dark:border-neutral-800 pb-3">
                                                     <span>
                                                         Tautan Undangan:
                                                     </span>
@@ -372,7 +372,7 @@ export default function CoupleDashboard({
                                                         className="font-mono text-admin-primary hover:brightness-125 hover:underline flex items-center gap-1 font-semibold"
                                                     >
                                                         /{invitation.slug}
-                                                        <span className="text-[10px] bg-admin-primary/10 text-admin-primary px-2 py-0.5 rounded-full font-mono font-medium">
+                                                        <span className="text-[10px] bg-admin-primary/10 dark:bg-admin-primary/20 text-admin-primary px-2 py-0.5 rounded-full font-mono font-medium">
                                                             {copiedSlug ===
                                                             invitation.slug
                                                                 ? "Tersalin!"
@@ -382,21 +382,21 @@ export default function CoupleDashboard({
                                                 </div>
 
                                                 <div className="grid grid-cols-2 gap-3 text-center">
-                                                    <div className="rounded-xl bg-gray-50 p-2.5">
-                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 block">
+                                                    <div className="rounded-xl bg-gray-50 dark:bg-neutral-800/80 p-2.5">
+                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-neutral-500 block">
                                                             Tamu
                                                         </span>
-                                                        <span className="font-semibold text-gray-800 text-sm">
+                                                        <span className="font-semibold text-gray-800 dark:text-neutral-100 text-sm">
                                                             {invitation.guests_count ||
                                                                 0}{" "}
                                                             Orang
                                                         </span>
                                                     </div>
-                                                    <div className="rounded-xl bg-gray-50 p-2.5">
-                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 block">
+                                                    <div className="rounded-xl bg-gray-50 dark:bg-neutral-800/80 p-2.5">
+                                                        <span className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 dark:text-neutral-500 block">
                                                             Konfirmasi RSVP
                                                         </span>
-                                                        <span className="font-semibold text-emerald-600 text-sm">
+                                                        <span className="font-semibold text-emerald-600 dark:text-emerald-400 text-sm">
                                                             {invitation.rsvps_count ||
                                                                 0}{" "}
                                                             Respon
@@ -404,9 +404,9 @@ export default function CoupleDashboard({
                                                     </div>
                                                 </div>
 
-                                                <div className="flex items-center justify-between text-[11px] text-gray-400 pt-1">
+                                                <div className="flex items-center justify-between text-[11px] text-gray-400 dark:text-neutral-500 pt-1">
                                                     <span>Berlaku hingga:</span>
-                                                    <span className="font-medium text-gray-600">
+                                                    <span className="font-medium text-gray-600 dark:text-neutral-300">
                                                         {formatDate(
                                                             invitation.expires_at,
                                                         )}
@@ -416,12 +416,12 @@ export default function CoupleDashboard({
                                         </div>
 
                                         {/* Actions Footer */}
-                                        <div className="border-t border-gray-100 bg-neutral-50/50 p-4 flex items-center justify-between gap-2">
+                                        <div className="border-t border-gray-100 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 p-4 flex items-center justify-between gap-2">
                                             <a
                                                 href={`/${invitation.slug}`}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-700 shadow-2xs hover:bg-gray-50 hover:text-gray-900 transition"
+                                                className="inline-flex items-center gap-1.5 rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-3 py-2 text-xs font-semibold text-gray-700 dark:text-neutral-200 shadow-2xs hover:bg-gray-50 dark:hover:bg-neutral-700 hover:text-gray-900 dark:hover:text-white transition"
                                                 title="Lihat Website Undangan"
                                             >
                                                 <svg
@@ -446,7 +446,7 @@ export default function CoupleDashboard({
                                                         "invitation.guests.index",
                                                         invitation.id,
                                                     )}
-                                                    className="inline-flex items-center gap-1.5 rounded-xl border border-admin-primary/20 bg-admin-primary/10 px-3 py-2 text-xs font-semibold text-admin-primary transition hover:bg-admin-primary/15"
+                                                    className="inline-flex items-center gap-1.5 rounded-xl border border-admin-primary/20 bg-admin-primary/10 dark:bg-admin-primary/20 px-3 py-2 text-xs font-semibold text-admin-primary transition hover:bg-admin-primary/15 dark:hover:bg-admin-primary/30"
                                                 >
                                                     <svg
                                                         className="h-3.5 w-3.5"
@@ -468,7 +468,7 @@ export default function CoupleDashboard({
                                                         "invitation.edit",
                                                         invitation.id,
                                                     )}
-                                                    className="inline-flex items-center gap-1.5 rounded-xl bg-gray-900 px-3 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-gray-800"
+                                                    className="inline-flex items-center gap-1.5 rounded-xl bg-gray-900 dark:bg-neutral-800 border border-transparent dark:border-neutral-700 px-3 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-gray-800 dark:hover:bg-neutral-700"
                                                 >
                                                     <svg
                                                         className="h-3.5 w-3.5"

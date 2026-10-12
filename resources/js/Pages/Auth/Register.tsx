@@ -26,17 +26,17 @@ export default function Register() {
             <Head title="Daftar Akun Baru" />
 
             <div className="mb-6 text-center">
-                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900">
+                <h1 className="font-serif text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Mulai Undangan Anda
                 </h1>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-gray-500 dark:text-neutral-400">
                     Daftar akun gratis dan buat website undangan impian
                 </p>
             </div>
 
             <form onSubmit={submit} className="space-y-4">
                 <div>
-                    <InputLabel htmlFor="name" value="Nama Lengkap" className="text-xs font-semibold text-gray-700" />
+                    <InputLabel htmlFor="name" value="Nama Lengkap" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
 
                     <TextInput
                         id="name"
@@ -54,7 +54,7 @@ export default function Register() {
                 </div>
 
                 <div>
-                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700" />
+                    <InputLabel htmlFor="email" value="Alamat Email" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
 
                     <TextInput
                         id="email"
@@ -72,7 +72,7 @@ export default function Register() {
                 </div>
 
                 <div>
-                    <InputLabel htmlFor="password" value="Kata Sandi" className="text-xs font-semibold text-gray-700" />
+                    <InputLabel htmlFor="password" value="Kata Sandi" className="text-xs font-semibold text-gray-700 dark:text-neutral-300" />
 
                     <TextInput
                         id="password"
@@ -93,7 +93,7 @@ export default function Register() {
                     <InputLabel
                         htmlFor="password_confirmation"
                         value="Konfirmasi Kata Sandi"
-                        className="text-xs font-semibold text-gray-700"
+                        className="text-xs font-semibold text-gray-700 dark:text-neutral-300"
                     />
 
                     <TextInput
@@ -126,8 +126,8 @@ export default function Register() {
                     </button>
                 </div>
 
-                <div className="pt-4 text-center border-t border-gray-100">
-                    <p className="text-xs text-gray-500">
+                <div className="pt-4 text-center border-t border-gray-100 dark:border-neutral-800">
+                    <p className="text-xs text-gray-500 dark:text-neutral-400">
                         Sudah punya akun?{' '}
                         <Link
                             href={route('login')}

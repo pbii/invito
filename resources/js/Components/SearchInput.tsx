@@ -39,7 +39,7 @@ export default function SearchInput({
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder={placeholder}
-                className={`w-full pl-10 pr-9 py-2 text-sm bg-transparent border border-gray-300 hover:border-gray-400 dark:border-admin-border dark:hover:border-admin-primary/50 text-gray-900 dark:text-slate-100 rounded-xl shadow-xs placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-admin-primary transition-all ${inputClassName}`}
+                className={`w-full pl-10 pr-9 py-2 text-sm bg-transparent border border-gray-300 hover:border-gray-400 dark:border-neutral-700 dark:hover:border-neutral-600 text-gray-900 dark:text-neutral-100 rounded-xl shadow-xs placeholder-gray-400 dark:placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-admin-primary transition-all ${inputClassName}`}
             />
             {value && (
                 <button
@@ -48,7 +48,7 @@ export default function SearchInput({
                         onChange("");
                         if (onClear) onClear();
                     }}
-                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 transition"
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 dark:text-neutral-400 dark:hover:text-neutral-200 transition"
                     title="Hapus pencarian"
                 >
                     <svg
