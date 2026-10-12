@@ -63,7 +63,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
             {isDark ? (
                 // Sun Icon (when currently dark, click to switch to light)
                 <svg
-                    className="h-4.5 w-4.5 text-amber-400 transition-transform duration-200 group-hover:rotate-45"
+                    className="h-5 w-5 text-amber-400 transition-transform duration-200 group-hover:rotate-45"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.8"
@@ -78,7 +78,7 @@ export default function ThemeToggle({ className = '' }: ThemeToggleProps) {
             ) : (
                 // Moon Icon (when currently light, click to switch to dark)
                 <svg
-                    className="h-4.5 w-4.5 text-neutral-600 transition-transform duration-200 group-hover:-rotate-12 dark:text-neutral-300"
+                    className="h-5 w-5 text-neutral-600 transition-transform duration-200 group-hover:-rotate-12 dark:text-neutral-300"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.8"

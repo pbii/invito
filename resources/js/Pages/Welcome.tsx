@@ -157,7 +157,7 @@ export default function Welcome({
                         Bagikan Momen Bahagia Anda{" "}
                         <br className="hidden sm:inline" />
                         dengan Sentuhan{" "}
-                        <span className="text-admin-primary italic">
+                        <span className="text-admin-primary dark:text-indigo-300 italic">
                             Mewah &amp; Penuh Cerita
                         </span>
                     </h1>
@@ -224,7 +224,7 @@ export default function Welcome({
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-900 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
                             <div className="w-10 h-10 rounded-xl bg-wedding-100 dark:bg-wedding-900/40 text-wedding-600 dark:text-wedding-400 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
@@ -249,7 +249,7 @@ export default function Welcome({
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-900 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
                             <div className="w-10 h-10 rounded-xl bg-champagne-200 dark:bg-champagne-900/40 text-champagne-800 dark:text-champagne-300 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
@@ -274,7 +274,7 @@ export default function Welcome({
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-850 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
+                        <div className="rounded-2xl border border-gray-100 dark:border-neutral-800 p-6 bg-neutral-50/50 dark:bg-neutral-900 hover:bg-white dark:hover:bg-neutral-800/80 hover:border-wedding-200 dark:hover:border-neutral-700 transition shadow-2xs">
                             <div className="w-10 h-10 rounded-xl bg-wedding-100 dark:bg-wedding-900/40 text-wedding-600 dark:text-wedding-400 flex items-center justify-center mb-4">
                                 <svg
                                     className="w-5 h-5"
@@ -307,7 +307,7 @@ export default function Welcome({
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
                     <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                         <div>
-                            <span className="text-xs font-bold uppercase tracking-widest text-admin-primary">
+                            <span className="text-xs font-bold uppercase tracking-widest text-admin-primary dark:text-indigo-300">
                                 Koleksi Eksklusif
                             </span>
                             <h2 className="mt-1 font-serif text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -438,7 +438,7 @@ export default function Welcome({
                 >
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="text-center max-w-xl mx-auto mb-14">
-                            <span className="text-xs font-bold uppercase tracking-widest text-admin-primary">
+                            <span className="text-xs font-bold uppercase tracking-widest text-admin-primary dark:text-indigo-300">
                                 Investasi Bahagia
                             </span>
                             <h2 className="mt-1 font-serif text-3xl font-bold text-gray-900 dark:text-white">
@@ -456,8 +456,8 @@ export default function Welcome({
                                     key={pkg.id}
                                     className={`relative flex flex-col justify-between rounded-3xl p-8 border transition ${
                                         pkg.badge
-                                            ? "border-admin-primary shadow-xl shadow-admin-primary/10 bg-white dark:bg-neutral-850 ring-2 ring-admin-primary"
-                                            : "border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-850 shadow-xs hover:border-gray-200 dark:hover:border-neutral-700"
+                                            ? "border-admin-primary shadow-xl shadow-admin-primary/10 bg-white dark:bg-neutral-900 ring-2 ring-admin-primary"
+                                            : "border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xs hover:border-gray-200 dark:hover:border-neutral-700"
                                     }`}
                                 >
                                     {pkg.badge && (
@@ -590,7 +590,7 @@ export default function Welcome({
                                             className={`w-full inline-flex items-center justify-center rounded-xl py-3 text-xs font-semibold transition ${
                                                 pkg.badge
                                                     ? "bg-admin-primary text-white shadow-xs hover:brightness-110"
-                                                    : "border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-750"
+                                                    : "border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-800"
                                             }`}
                                         >
                                             Pilih {pkg.name}
@@ -695,7 +695,7 @@ export default function Welcome({
                         </div>
 
                         {/* Modal Footer */}
-                        <div className="flex items-center justify-end gap-3 border-t border-gray-100 dark:border-neutral-800 px-6 py-4 bg-gray-50/50 dark:bg-neutral-850">
+                        <div className="flex items-center justify-end gap-3 border-t border-gray-100 dark:border-neutral-800 px-6 py-4 bg-gray-50/50 dark:bg-neutral-900">
                             <button
                                 type="button"
                                 onClick={() => setPreviewTemplate(null)}

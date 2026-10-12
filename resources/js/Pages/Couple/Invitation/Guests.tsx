@@ -306,7 +306,7 @@ export default function GuestsIndex({
                                                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition ${
                                                         isChecked
                                                             ? 'bg-admin-primary/10 border-admin-primary text-admin-primary font-semibold ring-1 ring-admin-primary'
-                                                            : 'bg-white dark:bg-neutral-800 border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-750'
+                                                            : 'bg-white dark:bg-neutral-800 border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800'
                                                     }`}
                                                 >
                                                     <span className={`w-2 h-2 rounded-full ${isChecked ? 'bg-admin-primary' : 'bg-gray-300'}`} />
@@ -669,7 +669,7 @@ export default function GuestsIndex({
                                                     className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium border transition ${
                                                         isChecked
                                                             ? 'bg-admin-primary/10 border-admin-primary text-admin-primary font-semibold ring-1 ring-admin-primary'
-                                                            : 'bg-white dark:bg-neutral-800 border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-750'
+                                                            : 'bg-white dark:bg-neutral-800 border-gray-200 dark:border-neutral-700 text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800'
                                                     }`}
                                                 >
                                                     <span className={`w-2 h-2 rounded-full ${isChecked ? 'bg-admin-primary' : 'bg-gray-300'}`} />
@@ -690,7 +690,7 @@ export default function GuestsIndex({
                                 <button
                                     type="button"
                                     onClick={() => setEditingGuest(null)}
-                                    className="rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-2 text-xs font-semibold text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-750"
+                                    className="rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 px-4 py-2 text-xs font-semibold text-gray-600 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-800"
                                 >
                                     Batal
                                 </button>

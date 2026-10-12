@@ -67,7 +67,7 @@ export default function Authenticated({
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-850 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-neutral-200 shadow-xs transition hover:bg-gray-50 dark:hover:bg-neutral-800 focus:outline-none"
+                                                className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-3 py-1.5 text-sm font-medium text-gray-700 dark:text-neutral-200 shadow-xs transition hover:bg-gray-50 dark:hover:bg-neutral-800 focus:outline-none"
                                             >
                                                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-admin-primary/10 text-xs font-bold text-admin-primary">
                                                     {user.name.charAt(0).toUpperCase()}
