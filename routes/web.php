@@ -101,6 +101,10 @@ Route::middleware([HandleInertiaRequests::class])->group(function () {
         ->middleware('throttle:30,1')
         ->name('invitation.rsvp');
 
+    Route::post('/{slug}/wishes', [PublicWishController::class, 'store'])
+        ->middleware('throttle:30,1')
+        ->name('public.wishes.store');
+
     Route::get('/{slug}', [InvitationViewController::class, 'show'])
         ->name('invitation.show');
 });
